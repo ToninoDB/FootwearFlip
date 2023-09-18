@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/ParteCSS/Filter.css">
+
+
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+    <form action="FiltraggioServletPrezzo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+           style="text-decoration: none;width: 5px;height: 5px; color: white">&#x2715</a>
+        <label for="prezzomin">Prezzo minimo:</label>
+        <input type="text" id="prezzomin" name="prezzomin">
+        <label id="prezzoMaxLab" for="prezzomax">Prezzo massimo:</label>
+        <input type="text" id="prezzomax" name="prezzomax">
+        <button id="filtra" onclick="return(validate())" value="filtra">Filtra</button>
+    </form>
+</div>
+
+<script>
+
+function openNav(x) {
+
+    if(x.matches)
+    {
+        document.getElementById("mySidebar").style.width = "400px";
+        document.getElementById("mySidebar").style.height="120px";
+        document.getElementById("main").style.marginLeft = "160px";
+    }
+    else
+    {
+        document.getElementById("mySidebar").style.width = "700px";
+        document.getElementById("mySidebar").style.height="135px";
+        document.getElementById("main").style.marginLeft = "160px";
+    }
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+function validate() {
+    var min = document.getElementById('prezzomin').value;
+    var max = document.getElementById('prezzomax').value;
+    var minRGEX = /^[0-9]*$/;
+    var maxRGEX = /^[0-9]*$/;
+    var minResult = minRGEX.test(min);
+    var maxResult = maxRGEX.test(max);
+
+    if (minResult == false) {
+        alert("Inserire un valore valido per il valore minimo");
+        return false;
+    }
+
+    if (maxResult == false) {
+        alert("Inserire un valore valido per il valore massimo");
+        return false;
+    }
+
+    return true;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.sidebar {
+    height: 22%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #b81414;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+    padding-top: 5px;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+.openbtn {
+    top: 0px;
+    left: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #b81414;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #prezzomax,#prezzoMaxLab,#filtra{
+        display: block;
+        margin-right:15%;
+    }
+    .closebtn{
+        margin-right: 20%;
+    }
+}
